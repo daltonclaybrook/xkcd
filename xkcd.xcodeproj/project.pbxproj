@@ -223,6 +223,7 @@
 		B5C7A614161A68F5003C0FC0 /* OpenInBrowserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInBrowserActivity.m; sourceTree = "<group>"; };
 		B5C7A617161A6907003C0FC0 /* OpenInChromeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInChromeActivity.h; sourceTree = "<group>"; };
 		B5C7A618161A6907003C0FC0 /* OpenInChromeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInChromeActivity.m; sourceTree = "<group>"; };
+		B5F135D2176AAA1D00C2AC15 /* xkcd120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xkcd120.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -406,6 +407,7 @@
 				03F40E48122AA87800A35F44 /* xkcd57.png */,
 				03F40E49122AA87800A35F44 /* xkcd58.png */,
 				03F40E4A122AA87800A35F44 /* xkcd114.png */,
+				B5F135D2176AAA1D00C2AC15 /* xkcd120.png */,
 			);
 			name = "Application icons";
 			sourceTree = "<group>";
