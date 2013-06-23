@@ -94,7 +94,7 @@ static UIImage *downloadImage = nil;
   searchBar.placeholder = NSLocalizedString(@"Search xkcd", @"Search bar placeholder text");
   searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
   searchBar.delegate = self;
-  searchBar.barStyle = UIBarStyleBlackOpaque;
+  searchBar.barStyle = kBarStyle;
   self.tableView.tableHeaderView = searchBar;  
 }
 
@@ -271,7 +271,7 @@ static UIImage *downloadImage = nil;
                       block:^ {
                         FAQViewController *faq = [[FAQViewController alloc] initWithNibName:nil bundle:nil];
                         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:faq];
-                        nav.navigationBar.barStyle = UIBarStyleBlackOpaque;
+                        nav.navigationBar.barStyle = kBarStyle;
                         [self presentViewController:nav animated:YES completion:^{}];
                       }];
   [sheet addButtonWithTitle:NSLocalizedString(@"Write App Store review", @"Action sheet title")

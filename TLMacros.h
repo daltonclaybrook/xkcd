@@ -12,3 +12,8 @@
 #endif
 
 #define BOUND(min, val, max) MAX(min, MIN(max, val))
+
+
+// These are temporary; we'll converge back on one style soon enough
+#define SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(v)  ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] != NSOrderedAscending)
+#define kBarStyle (SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ?  UIBarStyleDefault : UIBarStyleBlackOpaque)

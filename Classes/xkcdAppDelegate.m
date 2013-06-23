@@ -58,8 +58,8 @@ static NSString *applicationDocumentsDirectory = nil;
   }
   
   TLNavigationController *navigationController = [[TLNavigationController alloc] initWithRootViewController:listViewController];
-  navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-  navigationController.toolbar.barStyle = UIBarStyleBlackOpaque;
+  navigationController.navigationBar.barStyle = kBarStyle;
+  navigationController.toolbar.barStyle = kBarStyle;
     
   self.window.rootViewController = navigationController;
   [self.window addSubview:navigationController.view];
