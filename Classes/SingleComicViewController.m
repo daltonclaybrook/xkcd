@@ -82,24 +82,15 @@
   UIBarButtonItem *systemActionItem = [UIBarButtonItem barButtonSystemItem:UIBarButtonSystemItemAction
                                                                     target:self
                                                                     action:@selector(systemAction:)];
-  
-  UIBarButtonItem *previousItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"down"]
-                                                                    style:UIBarButtonItemStylePlain
-                                                                   target:self
-                                                                   action:@selector(goToPreviousComic)];
+
+  UIBarButtonItem *previousItem = [[UIBarButtonItem alloc] initWithTitle:@"prev" style:UIBarButtonItemStylePlain target:self action:@selector(goToPreviousComic)];
   previousItem.accessibilityLabel = NSLocalizedString(@"Older comic", @"older_comic_accessibility_label");
   previousItem.enabled = (self.comic.number.unsignedIntegerValue != kMinComicNumber);
 
-  UIBarButtonItem *randomItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"glyphish_shuffle"]
-                                                                  style:UIBarButtonItemStylePlain
-                                                                 target:self
-                                                                 action:@selector(goToRandomComic)];
+  UIBarButtonItem *randomItem = [[UIBarButtonItem alloc] initWithTitle:@"rand" style:UIBarButtonItemStylePlain target:self action:@selector(goToRandomComic)];
   randomItem.accessibilityLabel = NSLocalizedString(@"Random comic", @"random_comic_accessibility_label");
 
-  UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"up"]
-                                                                style:UIBarButtonItemStylePlain
-                                                               target:self
-                                                               action:@selector(goToNextComic)];
+  UIBarButtonItem *nextItem = [[UIBarButtonItem alloc] initWithTitle:@"next" style:UIBarButtonItemStylePlain target:self action:@selector(goToNextComic)];
   nextItem.accessibilityLabel = NSLocalizedString(@"Newer comic", @"newer_comic_accessibility_label");
   nextItem.enabled = (self.comic.number.unsignedIntegerValue != [Comic lastKnownComic].number.unsignedIntegerValue);
   
@@ -108,11 +99,12 @@
                            [UIBarButtonItem flexibleSpaceBarButtonItem],
                            [UIBarButtonItem flexibleSpaceBarButtonItem],
                            [UIBarButtonItem flexibleSpaceBarButtonItem],
-                           previousItem,
+                            nextItem,
                            [UIBarButtonItem flexibleSpaceBarButtonItem],
                            randomItem,
                            [UIBarButtonItem flexibleSpaceBarButtonItem],
-                           nextItem];
+                            previousItem,
+                            ];
   
   [self setToolbarItems:toolbarItems animated:NO];
   [self.navigationController setToolbarHidden:NO animated:NO];  
