@@ -70,6 +70,26 @@ static NSString *applicationDocumentsDirectory = nil;
   return canLaunchApplication;
 }
 
+
+/*
+- (void)application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+
+  // store list of all unviewed comics
+  // check latest timestamp; compare to now
+  // if in range attempt download, otherwise bail
+
+
+  // You enable support for background fetches from the Background modes section of the Capabilities tab in your Xcode project. (You can also enable this support by including the UIBackgroundModes key with the fetch value in your app’s Info.plist file.) At appropriate times, the system gives background execution time to the apps that support this background mode, launching the app directly into the background if needed. The app object calls the application:performFetchWithCompletionHandler: method of its app delegate to let you know when execution time is available.
+
+  // When downloading content in the background, use the NSURLSession class to initiate and manage your downloads. An NSURLSession object replaces instances of the NSURLConnection class in your app. When creating a URL session, you configure its parameters using a NSURLSessionConfiguration object. One of the configuration parameters you can specify is an identifier string. During subsequent launches, you use that identifier string to recreate a session that contained unfinished upload or download tasks when your app terminated.
+
+  // UIApplicationBackgroundFetchIntervalMinimum
+
+NSURLSession
+  completionHandler(UIBackgroundFetchResultNoData);
+}
+*/
+
 - (void) applicationWillResignActive:(UIApplication *)application
 {
   [NotificationGenerator generateNextNotification];
