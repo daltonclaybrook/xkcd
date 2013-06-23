@@ -5,6 +5,7 @@ build/
 *.xcodeproj/*.pbxuser
 *.xcodeproj/xcuserdata/*
 *.xcodeproj/project.xcworkspace/xcuserdata/*
+*.xcodeproj/project.xcworkspace/xcshareddata/xkcd.xccheckout
 
 .DS_Store
 **/*.pbxuser
