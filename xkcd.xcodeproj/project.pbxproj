@@ -92,6 +92,7 @@
 		B5C7A616161A68F5003C0FC0 /* OpenInBrowserActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A614161A68F5003C0FC0 /* OpenInBrowserActivity.m */; };
 		B5C7A619161A6907003C0FC0 /* OpenInChromeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A618161A6907003C0FC0 /* OpenInChromeActivity.m */; };
 		B5C7A61A161A6907003C0FC0 /* OpenInChromeActivity.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C7A618161A6907003C0FC0 /* OpenInChromeActivity.m */; };
+		BE19705018597FFB0060111C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE19704F18597FFB0060111C /* Main_iPhone.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,6 +215,7 @@
 		B5C7A614161A68F5003C0FC0 /* OpenInBrowserActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInBrowserActivity.m; sourceTree = "<group>"; };
 		B5C7A617161A6907003C0FC0 /* OpenInChromeActivity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenInChromeActivity.h; sourceTree = "<group>"; };
 		B5C7A618161A6907003C0FC0 /* OpenInChromeActivity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OpenInChromeActivity.m; sourceTree = "<group>"; };
+		BE19704F18597FFB0060111C /* Main_iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -483,6 +485,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE19704E18597FDC0060111C /* Interface */,
 				03F40E3C122AA54000A35F44 /* Application icons */,
 				03F8FBCA113DC1E300E717A6 /* Icons */,
 				034E0E9910A9ED7C0021D494 /* Meta */,
@@ -509,6 +512,14 @@
 				037CC6DF122B1846002E4738 /* QuartzCore.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BE19704E18597FDC0060111C /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				BE19704F18597FFB0060111C /* Main_iPhone.storyboard */,
+			);
+			name = Interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -608,6 +619,7 @@
 				03F40E44122AA58600A35F44 /* iTunesArtwork in Resources */,
 				03F40E4B122AA87800A35F44 /* xkcd29.png in Resources */,
 				03F40E4D122AA87800A35F44 /* xkcd58.png in Resources */,
+				BE19705018597FFB0060111C /* Main_iPhone.storyboard in Resources */,
 				03F40E55122AB8C700A35F44 /* glyphish_shuffle.png in Resources */,
 				03F40E56122AB8C700A35F44 /* glyphish_shuffle@2x.png in Resources */,
 				03F40E7E122AC9ED00A35F44 /* glyphish_download@2x.png in Resources */,

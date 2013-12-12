@@ -42,29 +42,32 @@ static NSString *applicationDocumentsDirectory = nil;
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  ComicListViewController *listViewController = [[ComicListViewController alloc] initWithStyle:UITableViewStylePlain];
-
-  BOOL canLaunchApplication = YES;
-  if(launchOptions) {
-    NSURL *launchURL = launchOptions[UIApplicationLaunchOptionsURLKey];
-    if(![[launchURL scheme] isEqual: @"xkcd"]) {
-      canLaunchApplication = NO;
-    }
-    NSInteger launchedComic = [[launchURL host] integerValue];
-    if(launchedComic > 0) {
-      listViewController.requestedLaunchComic = launchedComic;
-    }
-  }
-  
-  TLNavigationController *navigationController = [[TLNavigationController alloc] initWithRootViewController:listViewController];
-  navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-  navigationController.toolbar.barStyle = UIBarStyleBlackOpaque;
     
-  self.window.rootViewController = navigationController;
-  [self.window addSubview:navigationController.view];
-  [self.window makeKeyAndVisible];
-  
-  return canLaunchApplication;
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+    TLNavigationController *navigationController = [storyboard instantiateInitialViewController];
+    ComicListViewController *listViewController = [navigationController.viewControllers objectAtIndex:0];
+    
+    BOOL canLaunchApplication = YES;
+    if(launchOptions) {
+        NSURL *launchURL = launchOptions[UIApplicationLaunchOptionsURLKey];
+        if(![[launchURL scheme] isEqual: @"xkcd"]) {
+            canLaunchApplication = NO;
+        }
+        NSInteger launchedComic = [[launchURL host] integerValue];
+        if(launchedComic > 0) {
+            listViewController.requestedLaunchComic = launchedComic;
+        }
+    }
+    
+//    TLNavigationController *navigationController = [[TLNavigationController alloc] initWithRootViewController:listViewController];
+//    navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//    navigationController.toolbar.barStyle = UIBarStyleBlackOpaque;
+    
+    self.window.rootViewController = navigationController;
+    [self.window addSubview:navigationController.view];
+    [self.window makeKeyAndVisible];
+    
+    return canLaunchApplication;
 }
 
 - (void) applicationWillResignActive:(UIApplication *)application

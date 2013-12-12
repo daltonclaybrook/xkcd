@@ -63,7 +63,7 @@ static UIImage *downloadImage = nil;
 @property(nonatomic, strong, readwrite) SingleComicImageFetcher *imageFetcher;
 @property(nonatomic, strong, readwrite) NSFetchedResultsController *fetchedResultsController;
 @property(nonatomic, strong, readwrite) NSFetchedResultsController *searchFetchedResultsController;
-@property(nonatomic, strong, readwrite) UISearchDisplayController *searchController;
+//@property(nonatomic, weak) IBOutlet UISearchDisplayController *searchController;
 
 @end
 
@@ -87,14 +87,14 @@ static UIImage *downloadImage = nil;
 }
 
 - (void)addSearchBarTableHeader {
-  UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
-  searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-  [searchBar sizeToFit];
-  searchBar.placeholder = NSLocalizedString(@"Search xkcd", @"Search bar placeholder text");
-  searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
-  searchBar.delegate = self;
-  searchBar.barStyle = UIBarStyleBlackOpaque;
-  self.tableView.tableHeaderView = searchBar;  
+//  UISearchBar *searchBar = [[UISearchBar alloc] initWithFrame:CGRectZero];
+//  searchBar.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+//  [searchBar sizeToFit];
+  self.searchDisplayController.searchBar.placeholder = NSLocalizedString(@"Search xkcd", @"Search bar placeholder text");
+//  searchBar.autocapitalizationType = UITextAutocapitalizationTypeNone;
+//  searchBar.delegate = self;
+//  searchBar.barStyle = UIBarStyleBlackOpaque;
+//  self.tableView.tableHeaderView = searchBar;
 }
 
 - (void)addRefreshControl {
@@ -168,7 +168,7 @@ static UIImage *downloadImage = nil;
 - (void)viewDidAppear:(BOOL)animated {
   [super viewDidAppear:animated];
 
-  [self.searchController.searchResultsTableView deselectRowAtIndexPath:[self.searchController.searchResultsTableView indexPathForSelectedRow] animated:NO];
+  [self.searchDisplayController.searchResultsTableView deselectRowAtIndexPath:[self.searchDisplayController.searchResultsTableView indexPathForSelectedRow] animated:NO];
   [self reloadAllData]; // TODO: Is this necessary?
 }
 
@@ -177,10 +177,10 @@ static UIImage *downloadImage = nil;
   
   _imageFetcher.delegate = nil;
   
-  _searchController.searchBar.delegate = nil;
-  _searchController.delegate = nil;
-  _searchController.searchResultsDataSource = nil;
-  _searchController.searchResultsDelegate = nil;
+//  _searchController.searchBar.delegate = nil;
+//  _searchController.delegate = nil;
+//  _searchController.searchResultsDataSource = nil;
+//  _searchController.searchResultsDelegate = nil;
 }
 
 - (void)scrollToComicAtIndexPath:(NSIndexPath *)indexPath {
@@ -364,11 +364,11 @@ static UIImage *downloadImage = nil;
 }
 
 - (UITableView *)activeTableView {
-  return self.searchController.active ? self.searchController.searchResultsTableView : self.tableView;
+  return self.searchDisplayController.active ? self.searchDisplayController.searchResultsTableView : self.tableView;
 }
 
 - (UITableView *)tableViewForFetchedResultsController:(NSFetchedResultsController *)controller {
-  return [controller isEqual:self.searchFetchedResultsController] ? self.searchController.searchResultsTableView : self.tableView;
+  return [controller isEqual:self.searchFetchedResultsController] ? self.searchDisplayController.searchResultsTableView : self.tableView;
 }
 
 
@@ -562,13 +562,13 @@ static UIImage *downloadImage = nil;
 #pragma mark UISearchBarDelegate methods
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar {
-  if(!self.searchController) {
-    self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
-    self.searchController.searchResultsDataSource = self;
-    self.searchController.searchResultsDelegate = self;
-    self.searchController.delegate = self;    
-  }
-  [self.searchController setActive:YES animated:YES];
+//  if(!self.searchController) {
+//    self.searchController = [[UISearchDisplayController alloc] initWithSearchBar:searchBar contentsController:self];
+//    self.searchController.searchResultsDataSource = self;
+//    self.searchController.searchResultsDelegate = self;
+//    self.searchController.delegate = self;    
+//  }
+  [self.searchDisplayController setActive:YES animated:YES];
 }
 
 #pragma mark -
